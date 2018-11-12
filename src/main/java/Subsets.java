@@ -1,9 +1,9 @@
 /**
  * Given a set of distinct integers, return all possible subsets.
- *
+ * <p>
  * Example
  * If S = [1,2,3], a solution is:
- * 
+ * <p>
  * [
  * [3],
  * [1],
@@ -48,7 +48,7 @@ public class Subsets {
 
     result.add(new ArrayList<>(subset));
 
-    for (int i = pos; i < nums.length ; i++) {
+    for (int i = pos; i < nums.length; i++) {
       subset.add(nums[i]);
       subsetsHelper(nums, subset, i + 1, result);
       subset.remove(subset.size() - 1);
