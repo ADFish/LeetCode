@@ -23,11 +23,8 @@ public class Permutation {
 
   public static void main(String[] args) {
     int[] nums = {1, 2, 3};
-    boolean[] visited = new boolean[nums.length];
-    for (boolean i: visited) {
-      System.out.println(i);
-    }
-
+    List<List<Integer>> result = permute(nums);
+    System.out.println(result);
   }
 
   /*
@@ -36,26 +33,35 @@ public class Permutation {
    */
   public static List<List<Integer>> permute(int[] nums) {
     // write your code here
-    List<List<Integer>> result = new ArrayList<List<Integer>>();
+    List<List<Integer>> result = new ArrayList<>();
     List<Integer> permutation = new ArrayList<>();
+    boolean[] visited = new boolean[nums.length];
+
+    if (nums == null) {
+      return result;
+    }
 
     Arrays.sort(nums);
+    permuteHelper(nums, result, permutation, visited);
     return result;
   }
 
-  public static void permuteHelper(int[] nums, List<List<Integer>> result, List<Integer> permutation,int pos) {
+  public static void permuteHelper(int[] nums, List<List<Integer>> result, List<Integer> permutation, boolean[] visited) {
 
-    for (int i = 0; i < nums.length - 1; i++) {
-      permutation.add(nums[i]);
-      permuteHelper(nums, result, permutation, i + 1);
-      if (permutation.size() == nums.length) {
-        result.add(new ArrayList<>(permutation));
-      }
-      permutation.remove(permutation.size() - 1);
-
-
+    if (permutation.size() == nums.length){
+      result.add(new ArrayList<>(permutation));
     }
 
+    for (int i = 0; i < nums.length ; i++) {
+      if (visited[i] == false){
+        permutation.add(nums[i]);
+        visited[i] = true;
+        permuteHelper(nums, result, permutation, visited);
+        visited[i] = false;
+        permutation.remove(permutation.size() - 1);
+      }
+
+    }// End loop for
   }
 
 }
