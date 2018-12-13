@@ -1,3 +1,5 @@
+package binarySearchSortedArray;
+
 import java.util.Arrays;
 
 /**
