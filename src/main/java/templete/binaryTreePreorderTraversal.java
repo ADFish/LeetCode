@@ -17,12 +17,10 @@ public class binaryTreePreorderTraversal {
 
     public static void main(String[] args) {
         TreeNode root = new TreeNode(1);
-        int[] values = {2,4,5,3};
-        root.add(root, values);
-/*        root.left = new TreeNode(2);
+        root.left = new TreeNode(2);
         root.right = new TreeNode(3);
         root.left.left = new TreeNode(4);
-        root.left.right = new TreeNode(5);*/
+        root.left.right = new TreeNode(5);
 
         ArrayList<Integer> result = new ArrayList<>();
         traverse(root, result);
@@ -34,22 +32,22 @@ public class binaryTreePreorderTraversal {
     }
 
     //Method 0 Non-Recursion method
-    public static ArrayList<Integer> nonRecursion(TreeNode root){
+    public static ArrayList<Integer> nonRecursion(TreeNode root) {
         Stack<TreeNode> stack = new Stack<>();
         ArrayList<Integer> result = new ArrayList<>();
 
-        if(root == null){
+        if (root == null) {
             return result;
         }
 
         stack.add(root);
-        while(!stack.empty()){
+        while (!stack.empty()) {
             TreeNode temp = stack.pop();
             result.add(temp.val);
-            if(temp.right != null){
+            if (temp.right != null) {
                 stack.add(temp.right);
             }
-            if(temp.left != null){
+            if (temp.left != null) {
                 stack.add(temp.left);
             }
         }
@@ -58,8 +56,8 @@ public class binaryTreePreorderTraversal {
     }
 
     //Method 1 traverse
-    public static void traverse(TreeNode root, ArrayList<Integer> result){
-        if(root == null){
+    public static void traverse(TreeNode root, ArrayList<Integer> result) {
+        if (root == null) {
             return;
         }
         result.add(root.val);
@@ -68,9 +66,9 @@ public class binaryTreePreorderTraversal {
     }
 
     //Method 2 Divide and Conquer
-    public static ArrayList<Integer> dividConquer(TreeNode root){
+    public static ArrayList<Integer> dividConquer(TreeNode root) {
         ArrayList<Integer> result = new ArrayList<>();
-        if(root == null){
+        if (root == null) {
             return result;
         }
 
