@@ -8,6 +8,8 @@ public class TreeNode {
         this.left = this.right = null;
     }
 
+
+    //Preorder
     public void add(TreeNode root,int[] values){
         for (int i = 0; i < values.length; i++) {
             root = addRecursive(root, values[i]);
