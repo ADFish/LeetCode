@@ -109,9 +109,6 @@ public class LowestCommonAncestorofaBinaryTree {
     return (leftLCA != null) ? leftLCA : rightLCA;
   }
 
-  /**
-   * Method3: With parent pointer
-   */
 
   
 }
