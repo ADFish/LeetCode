@@ -13,10 +13,18 @@ public class RemoveDuplicatesfromSortedList2 {
     ListNode dummy = new ListNode(Integer.MIN_VALUE);
     dummy.next = head;
     head = dummy;
-    ListNode prev = head;
-    ListNode curt = head.next;
 
-
+    while(head.next != null && head.next.next != null){
+      if(head.next.val == head.next.next.val){
+        int temp = head.next.val;
+        while(head.next != null && head.next.val == temp){
+          head.next = head.next.next;
+        }
+      }else{
+        head = head.next;
+      }
+    }
+    return dummy.next;
 
   }
 }
