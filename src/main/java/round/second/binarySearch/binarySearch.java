@@ -1,4 +1,4 @@
-package binarySearch;
+package round.second.binarySearch;
 
 /**
  * Given a sorted (in ascending order) integer array nums of n elements and a target value, write a function to search target in nums.
