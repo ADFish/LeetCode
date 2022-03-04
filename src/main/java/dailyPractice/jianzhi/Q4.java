@@ -18,8 +18,7 @@ public class Q4 {
             }
             if (matrix[row][col] < target) {
                 col++;
-            }
-            if (matrix[row][col] > target) {
+            } else {
                 row--;
             }
         }
