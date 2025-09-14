@@ -1,4 +1,4 @@
-package round.leetcood75;
+package round.leetcood75.dynamicProgramming;
 
 public class Q1173 {
     public int tribonacci(int n) {
